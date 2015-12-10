@@ -5,10 +5,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/andrewrk/node-minecraft-protocol.git"
+    "url": "git://github.com/PrismarineJS/node-minecraft-protocol.git"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "prepublish": "gulp && require-self",
+    "test": "mocha --recursive --require intelli-espower-loader --require source-map-support/register --reporter spec"
   },
   "keywords": [
     "minecraft",
@@ -21,22 +22,41 @@
     "bot"
   ],
   "author": "Andrew Kelley",
-  "license": "BSD",
+  "license": "BSD-3-Clause",
   "engines": {
     "node": ">=0.8.16"
   },
+  "browser": "browser.js",
   "devDependencies": {
-    "mocha": "~1.8.2",
-    "mkdirp": "~0.3.4",
-    "rimraf": "~2.1.1",
-    "zfill": "0.0.1",
-    "batch": "~0.3.1"
+    "chai": "^2.3.0",
+    "espower-loader": "^1.0.0",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.3.0",
+    "intelli-espower-loader": "^1.0.0",
+    "minecraft-wrap": "~0.6.5",
+    "mocha": "~2.3.3",
+    "power-assert": "^1.0.0",
+    "require-self": "^0.1.0",
+    "source-map-support": "^0.3.2"
   },
   "dependencies": {
-    "ursa": "~0.8.0",
+    "babel-runtime": "^5.4.4",
+    "buffer-equal": "0.0.1",
+    "lodash.reduce": "^3.1.2",
+    "minecraft-data": "^0.16.1",
+    "node-uuid": "~1.4.1",
+    "prismarine-nbt": "0.1.0",
+    "protodef": "0.2.5",
+    "readable-stream": "^1.1.0",
     "superagent": "~0.10.0",
-    "buffer-equal": "0.0.0",
-    "ansi-color": "0.2.1",
-    "node-uuid": "~1.4.1"
+    "ursa-purejs": "0.0.3",
+    "uuid": "^2.0.1",
+    "uuid-1345": "^0.99.6",
+    "yggdrasil": "0.1.0"
+  },
+  "optionalDependencies": {
+    "ursa": "~0.9.1"
   }
 }
